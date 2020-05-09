@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+    <h1>Data Should be Pre-Processed</h1>
+
+    <a href="knn-classification" class="button">KNN Classification</a>
+    <div class="classification-container">
+        {% block classification_block %}
+            
+        {% endblock %}
+    </div>
+
+{% endblock %}

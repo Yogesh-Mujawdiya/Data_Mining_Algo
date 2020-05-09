@@ -1,0 +1,52 @@
+{% extends "classification.html" %}
+
+{% block classification_block %}
+<div class="knn-classification-container">
+<form action = "download"
+     method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+<table>
+    <tr>
+        <th>
+            <label>Select Train Data File</label>
+        </th>
+        <td>
+            <input type="file" name="Train_Data_File" required>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label>Select Test Data File</label>
+        </th>
+        <td>
+            <input type="file" name="Test_Data_File" required>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label>K Value : </label>
+        </th>
+        <td>
+            <input type="number" name="K_Value" value="5" required>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label>Classification Label Name : </label>
+        </th>
+        <td>
+            <input type="text" name="Label_Name" placeholder="Label Name" required>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <input type="submit" value="Classify">
+        </th>
+    </tr>
+</table>
+
+
+</form>
+</div>
+{% endblock %}
